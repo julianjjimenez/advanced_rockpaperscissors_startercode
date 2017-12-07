@@ -23,12 +23,24 @@
 var userChoice = "";
 var computerChoise = "";
 var winner = "";
-var choices = [
-        "rock", "paper", "scissors"
-];
+var choices = [ "rock", "paper", "scissors"];
 
 //FUNCTIONS
 
 
 
 // DOCUMENT READY FUNCTION
+$(document).ready(function() {
+$("#rock").click(function(){
+   userChoice= choices[0];
+   Math.floor((Math.random()*3));
+});
+
+
+
+
+
+
+
+
+});
