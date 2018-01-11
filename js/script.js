@@ -21,26 +21,43 @@
 //GLOBAL VARIABLES
 
 var userChoice = "";
-var computerChoise = "";
-var winner = "";
-var choices = [ "rock", "paper", "scissors"];
+var computerChoice = "";
+var result = "";
+var choices = ["rock", "paper", "scissors"];
+
+console.log($);
 
 //FUNCTIONS
 
-
+function compareChoices(computerChoice, userChoice) {
+   if (computerChoice === userChoice) return "It's a tie!"
+   else if (userChoice === "rock" && computerChoice === "paper") return "You lost!"
+   else if (userChoice === "paper" && computerChoice === "scissors") return "You lost!"
+   else if (userChoice === "scissors" && computerChoice === "rock") return "You lost!"
+   return "YOU WON!"
+}
 
 // DOCUMENT READY FUNCTION
 $(document).ready(function() {
-$("#rock").click(function(){
-   userChoice= choices[0];
-   Math.floor((Math.random()*3));
-});
-
-
-
-
-
-
-
-
+   $(".rock").click(function() {
+      userChoice = choices[0];
+      computerChoice = choices[Math.floor((Math.random() * 3))];
+      result = compareChoices(computerChoice, userChoice)
+      console.log(result)
+      $("p").html(result);
+   });
+   $(".paper").click(function() {
+      userChoice = choices[1];
+      computerChoice = choices[Math.floor((Math.random() * 3))];
+      result = compareChoices(computerChoice, userChoice)
+      console.log(result)
+      $("p").html(result);
+   });
+   $(".scissors").click(function() {
+      userChoice = choices[2];
+      computerChoice = choices[Math.floor((Math.random() * 3))];
+      result = compareChoices(computerChoice, userChoice)
+      console.log(result)
+      $("p").html(result);
+   });
 });
